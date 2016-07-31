@@ -1,0 +1,23 @@
+{
+  "name": "fiona.link",
+  "version": "1.0.0",
+  "description": "blog & sync server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "blog",
+    "&",
+    "github",
+    "webhook"
+  ],
+  "author": "paul.huang",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0"
+  }
+}
