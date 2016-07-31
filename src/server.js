@@ -2,7 +2,10 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var express = require('express');
 var app = express();
-app.use(bodyParser);
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 app.use(morgan('combined'));
 
 var exec = require('child_process').exec;
@@ -14,22 +17,22 @@ app.get('/', function(req, res) {
 
 app.post('/payload', function(req, res) {
     var repositoryName = req.body.repository.name;
-    execScript(getPullReporsitoryScriptPath(repositoryName));
+    execScript(getPullRepositoryScriptPath(repositoryName));
 
     res.send('pulled code from repository: ' + repositoryName);
 });
 
-app.get('/pull/:reporsityName', function(req, res) {
-    var repositoryName = req.req.repositoryName;
-    execScript(getPullReporsitoryScriptPath(repositoryName));
+app.get('/pull/:repositoryName', function(req, res) {
+    var repositoryName = req.params.repositoryName;
+    execScript(getPullRepositoryScriptPath(repositoryName));
 
     res.send('force pulled code from repository: ' + repositoryName);
 });
 
-function getPullReporsitoryScriptPath(type) {
+function getPullRepositoryScriptPath(type) {
     var scriptPath = '';
     switch (type) {
-        case value:
+        case 'fiona.link':
             scriptPath = path.resolve('./sync-fiona-blog.bat');
             break;
         default:
