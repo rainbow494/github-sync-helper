@@ -1,0 +1,6 @@
+{
+    "server": {
+        "port": 4041
+    },
+    "fiona_link_bat": "./sync-fiona-blog.sh"
+}

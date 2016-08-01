@@ -1,7 +1,12 @@
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var express = require('express');
+const timeout = require('connect-timeout');
+const port = '<server.port>';
+
 var app = express();
+app.use(timeout('30s'));
+app.use(haltOnTimedout);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -29,11 +34,36 @@ app.get('/pull/:repositoryName', function(req, res) {
     res.send('force pulled code from repository: ' + repositoryName);
 });
 
+app.listen(port, (error) => {
+    if (error) {
+        console.log('Server Start Up Error:' + error);
+    } else {
+        console.log(`==> 🌎  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.`);
+    }
+});
+
+app.use(function(err, req, res, next) { // jshint ignore:line
+    res.send('Exprssjs Error Stack:' + err.stack);
+});
+
+process.on('uncaughtException', function(error) {
+    console.log('server is broken by unhandle exception :' + error);
+});
+
+
+
+
+
+
+function haltOnTimedout(req, res, next) {
+    if (!req.timedout) next();
+}
+
 function getPullRepositoryScriptPath(type) {
     var scriptPath = '';
     switch (type) {
         case 'fiona.link':
-            scriptPath = path.resolve('./sync-fiona-blog.bat');
+            scriptPath = path.resolve('<fiona_link_bat>');
             break;
         default:
             break;
@@ -77,5 +107,3 @@ function execCmd(cmd, projectPath) {
         console.log('closing code: ' + code);
     });
 }
-
-app.listen(4041);

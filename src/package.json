@@ -5,7 +5,8 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js"
+        "start": "node server.js",
+        "debug": "nodemon --debug server.js"
     },
     "keywords": [
         "github",
@@ -15,6 +16,7 @@
     "license": "MIT",
     "dependencies": {
         "body-parser": "^1.15.2",
+        "connect-timeout": "^1.7.0",
         "express": "^4.14.0",
         "morgan": "^1.7.0"
     }
