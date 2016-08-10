@@ -17,7 +17,7 @@ var exec = require('child_process').exec;
 var path = require('path');
 
 app.get('/', function(req, res) {
-    res.send('Hello World');
+    res.send('Github-Sync-Helper Service Is Working!');
 });
 
 app.post('/payload', function(req, res) {
@@ -49,7 +49,6 @@ app.use(function(err, req, res, next) { // jshint ignore:line
 process.on('uncaughtException', function(error) {
     console.log('server is broken by unhandle exception :' + error);
 });
-
 
 
 
