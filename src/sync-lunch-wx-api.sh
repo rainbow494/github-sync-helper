@@ -1,0 +1,1 @@
+git -C /home/ubuntu/paul/lunch-wx-api pull

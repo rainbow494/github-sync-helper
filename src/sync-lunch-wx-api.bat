@@ -1,0 +1,1 @@
+git -C f:\github\lunch-wx-api-clone pull

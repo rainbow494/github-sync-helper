@@ -33,6 +33,7 @@ gulp.task('copy', function() {
     return gulp.src(['./src/**'])
         .pipe(replace('<server.port>', secrets.server.port))
         .pipe(replace('<fiona_link_bat>', secrets.fiona_link_bat))
+        .pipe(replace('<lunch_wx_api_bat>', secrets.lunch_wx_api_bat))
         .pipe(gulp.dest(path.distPath));
 });
 

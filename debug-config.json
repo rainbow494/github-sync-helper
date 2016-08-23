@@ -2,5 +2,6 @@
     "server": {
         "port": 4041
     },
-    "fiona_link_bat": "./sync-fiona-blog.bat"
+    "fiona_link_bat": "./sync-fiona-blog.bat",
+    "lunch_wx_api_bat": "./sync-lunch-wx-api.bat"
 }

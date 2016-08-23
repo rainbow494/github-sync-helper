@@ -50,19 +50,18 @@ process.on('uncaughtException', function(error) {
     console.log('server is broken by unhandle exception :' + error);
 });
 
-
-
-
-
 function haltOnTimedout(req, res, next) {
     if (!req.timedout) next();
 }
 
-function getPullRepositoryScriptPath(type) {
+function getPullRepositoryScriptPath(repositoryName) {
     var scriptPath = '';
-    switch (type) {
+    switch (repositoryName) {
         case 'fiona.link':
             scriptPath = path.resolve('<fiona_link_bat>');
+            break;
+         case 'lunch-wx-api':
+            scriptPath = path.resolve('<lunch_wx_api_bat>');
             break;
         default:
             break;
