@@ -1,5 +1,10 @@
-git -C /home/ubuntu/paul/lunch-wx-api pull
+git -C  /home/ubuntu/paul/lunch-wx-api/ pull 
+cd /home/ubuntu/paul/lunch-wx-api/
 
-cd /home/ubuntu/paul/lunch-wx-api
-call npm install
-call npm run build-dev
+npm install
+
+npm run build-prod
+
+cd /home/ubuntu/paul/lunch-wx-api/build_product/
+
+npm install
