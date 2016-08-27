@@ -2,6 +2,6 @@
     "server": {
         "port": 4041
     },
-    "fiona_link_bat": "./sync-fiona-blog.sh",
-    "lunch_wx_api_bat": "./sync-lunch-wx-api.sh"
+    "fiona_link_bat": "/home/ubuntu/paul/github-sync-helper/sync-fiona-blog.sh",
+    "lunch_wx_api_bat": "/home/ubuntu/paul/github-sync-helper/sync-lunch-wx-api.sh"
 }
